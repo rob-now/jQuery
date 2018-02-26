@@ -1,4 +1,4 @@
-// Executing jQuery function after DOM ready/loaded
+// Executing jQuery function after DOM is ready/fully loaded
 $(document).ready(function(){
     // Select span and change it's inner text using method text()
     $("span").text("$25");
@@ -22,4 +22,19 @@ $(document).ready(function(){
     $("#list2 > li:even").text("li:even");
     // Multi selectors
     $("#list2 > li:first, .sub-list > li:first").text("li:first x 2");
+    
+    // TRAVERSING the DOM - faster than CSS selectors
+    // Finding sub-list class in list3 ID using traversing
+    $("#list3").find(".sub-list");
+    // Find first li in sub-list class in list3 ID
+    $("#list3 .sub-list li").first().text("find first");
+    // Find last li in list3 ID
+    //$("#list3 li").last().text("find last");
+    // Find previous to last li in list3 ID
+    $("#list3 li").last().prev().text("find previous to last");
+    // Finding parent of discount class
+    $(".discount").parent().text("parent of discount class");
+    // Finding all children (only direct) li of list3 ID
+    $("#list3").children("li");
+
 });
