@@ -2,7 +2,7 @@
     display: block;
     width: 150px;
     padding: 10px 0;
-    margin: 40px auto;
+    margin: 0 auto;
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
@@ -119,4 +119,5 @@
 
 h2 {
     text-align: center;
+    padding-top: 20px;
 }
