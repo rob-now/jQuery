@@ -1,13 +1,11 @@
 $(document).ready(function () {
-    $(".button.g").on("click", function () {
-        var message = $("<span style='display: block; text-align: center;'>Call us for the price: 334-443-344</span>");
+    // Event delegation - listening for clicks only on A tags inside item class
+    $(".item").on("click", "a", function () {
+        var item = $(this).closest(".item");
+        var price = item.data("price");
+        var message = $("<span style='display: block; text-align: center;'>The price is $" +price+ "</span>");
 
-        // Add message stored in variable before button g into the DOM
-        //$(".button.g").before(message);
-        // Add message as last child of container ID
-        $(this).closest(".item").append(message);
-        // Remove item of classes button and g
+        item.append(message);
         $(this).remove();
-        // We can use .append(), .prepend(), .after(), .before()
     });
 });
