@@ -1,3 +1,8 @@
+body {
+    font-family: Arial, Sans;
+    font-size: 14px;
+}
+
 .button {
     display: block;
     width: 150px;
@@ -10,7 +15,9 @@
 }
 
 .a {
+    display: inline-block;
     font-family: Arial, Sans;
+    font-size: 14px;
     background-color: hsl(0, 100%, 100%);
     color: hsl(220, 12%, 50%);
     border: 2px solid hsl(220, 12%, 50%);
@@ -120,4 +127,26 @@
 h2 {
     text-align: center;
     padding-top: 20px;
+}
+
+.item {
+    margin: 5px auto;
+    border: 1px solid hsl(224, 17%, 53%);
+    min-height: 117px;
+}
+
+.highlighted {
+    background: hsl(221, 25%, 95%);
+    border: 1px solid hsl(224, 17%, 53%);
+}
+
+#filters {
+    text-align: center;
+    font-size: 18px;
+}
+
+.my-message {
+    display: block;
+    font-size: 16px;
+    text-align: center;
 }

@@ -3,9 +3,19 @@ $(document).ready(function () {
     $(".item").on("click", "a", function () {
         var item = $(this).closest(".item");
         var price = item.data("price");
-        var message = $("<span style='display: block; text-align: center;'>The price is $" +price+ "</span>");
-
+        var message = $("<a class='button g my-message'>$" + price + "</a>");
         item.append(message);
         $(this).remove();
+    });
+
+    // Highlighting on-sale items
+    $("#filters").on("click", ".on-sale", function () {
+        $(".highlighted").removeClass("highlighted");
+        $(".item").filter(".on-sale").addClass("highlighted");
+    });
+    // Highlighting new items
+    $("#filters").on("click", ".new", function () {
+        $(".highlighted").removeClass("highlighted");
+        $(".item").filter(".new").addClass("highlighted");
     });
 });
