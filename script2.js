@@ -6,6 +6,7 @@ $(document).ready(function () {
         var price = $("<a class='button g my-price'>$" + getPrice + "</a>");
         item.append(price);
         $(this).remove();
+        return false; // prevents default action for href="#" which scrolls to the top of the page after click
     });
 
     // Highlighting on-sale items
@@ -14,11 +15,13 @@ $(document).ready(function () {
         $(".highlighted").removeClass("highlighted");
         // Add class highlighted only to elements with class on-sale
         $(".item").filter(".on-sale").addClass("highlighted");
+        return false;
     });
     // Highlighting new items
     $("#filters").on("click", ".new", function () {
         $(".highlighted").removeClass("highlighted");
         $(".item").filter(".new").addClass("highlighted");
+        return false;
     });
 
     // Showing description
@@ -33,5 +36,6 @@ $(document).ready(function () {
             description.slideUp().addClass("hidden");
             showDescBtn.html("Show description");
         }
+        return false; // prevents default action for href="#" which scrolls to the top of the page after click
     });
 });
