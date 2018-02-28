@@ -1,5 +1,7 @@
 // Executing jQuery function after DOM is ready/fully loaded
 $(document).ready(function(){
+    //Checking number of li items in document
+    alert($("li").length);
     // Select span and change it's inner text using method text()
     $("span").text("$25");
     // Select all h2 and change their titles
