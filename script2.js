@@ -3,8 +3,8 @@ $(document).ready(function () {
     $(".item").on("click", "a.price", function () {
         var item = $(this).closest(".item");
         var getPrice = item.data("price");
-        var price = $("<a class='button g my-price'>$" + getPrice + "</a>");
-        item.append(price);
+        var price = $("<a class='button g'>$" + getPrice + "</a>");
+        $(this).closest(".price-div").prepend(price);
         $(this).remove();
         return false; // prevents default action for href="#" which scrolls to the top of the page after click
     });
@@ -51,16 +51,18 @@ $(document).ready(function () {
     $(".item").on("mouseenter", "h2", highlight);
     $(".item").on("mouseleave", "h2", unHighlight);
 
-    // Price * quantity
+    // Total price functionality (price * quantity)
     $(".item").on("keyup", ".quantity", function () {
         // Get value entered in input field as number (+ before $)
         // and store it in variable
         var quantity = +$(this).val();
         // Get price of item as number (+ before $)
         var getPrice = +$(this).closest(".item").data("price");
+        // New var for repeated code
+        var closestPriceDiv = $(this).closest(".price-div");
         // Update the quantity text in span
-        $(this).closest("div").find(".quantity-count").text($(this).val());
+        closestPriceDiv.find(".quantity-count").text($(this).val());
         // Update total (price * quantity)
-        $(this).closest("div").find(".total").text(getPrice * quantity);
+        closestPriceDiv.find(".total").text(getPrice * quantity);
     });
 });
