@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Event delegation - listening for clicks only on A tags inside item class
+    // Event delegation - listening for clicks only on A tags with class price inside item class
     $(".item").on("click", "a.price", function () {
         var item = $(this).closest(".item");
         var getPrice = item.data("price");
@@ -40,15 +40,27 @@ $(document).ready(function () {
     });
 
     // Highlight on mouseenter and mouseleave
-    function highlight () {
+    function highlight() {
         $(this).addClass("highlight");
     }
-    function unHighlight () {
+
+    function unHighlight() {
         $(this).removeClass("highlight");
     }
+
     $(".item").on("mouseenter", "h2", highlight);
     $(".item").on("mouseleave", "h2", unHighlight);
 
     // Price * quantity
-
+    $(".item").on("keyup", ".quantity", function () {
+        // Get value entered in input field as number (+ before $)
+        // and store it in variable
+        var quantity = +$(this).val();
+        // Get price of item as number (+ before $)
+        var getPrice = +$(this).closest(".item").data("price");
+        // Update the quantity text in span
+        $(this).closest("div").find(".quantity-count").text($(this).val());
+        // Update total (price * quantity)
+        $(this).closest("div").find(".total").text(getPrice * quantity);
+    });
 });

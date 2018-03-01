@@ -50,7 +50,7 @@ body {
 
 h2 {
     text-align: center;
-    background: hsl(120, 22%, 90%);
+    background: hsl(120, 22%, 66%);
     transition: background 0.3s;
 }
 
@@ -61,7 +61,7 @@ h2 {
 }
 
 .highlighted {
-    background: hsl(120, 22%, 98%);
+    background: hsl(120, 22%, 90%);
     border: 3px solid hsl(120, 22%, 46%);
 }
 
@@ -89,6 +89,25 @@ p {
     color: white;
     transition: background 0.3s;
 }
+
+.price-div {
+    text-align: center;
+}
+
+input {
+    width: 60px;
+    text-align: center;
+}
+
+.price-div p {
+    padding: 8px 0;
+}
+
+label, input, .price-div p {
+    font-size: 20px;
+}
+
+
 
 @media screen and (max-width: 768px) {
     #container {
