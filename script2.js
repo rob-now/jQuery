@@ -38,4 +38,17 @@ $(document).ready(function () {
         }
         return false; // prevents default action for href="#" which scrolls to the top of the page after click
     });
+
+    // Highlight on mouseenter and mouseleave
+    function highlight () {
+        $(this).addClass("highlight");
+    }
+    function unHighlight () {
+        $(this).removeClass("highlight");
+    }
+    $(".item").on("mouseenter", "h2", highlight);
+    $(".item").on("mouseleave", "h2", unHighlight);
+
+    // Price * quantity
+
 });

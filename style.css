@@ -50,6 +50,8 @@ body {
 
 h2 {
     text-align: center;
+    background: hsl(120, 22%, 90%);
+    transition: background 0.3s;
 }
 
 .item {
@@ -77,6 +79,17 @@ h2 {
     font-size: 18px;
 }
 
+p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.highlight {
+    background: hsl(120, 22%, 46%);
+    color: white;
+    transition: background 0.3s;
+}
+
 @media screen and (max-width: 768px) {
     #container {
         width: 100%;
@@ -89,10 +102,5 @@ h2 {
 
     .description {
         font-size: 24px;
-    }
-
-    p {
-        -webkit-margin-before: 0;
-        -webkit-margin-after: 0;
     }
 }
